@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Find Similar Canadian Businesses</title>
+<link rel="shortcut icon" href="../static/images/logo-1.ico">
+<link rel="icon" href="../static/images/logo-1.ico">
+<link rel="stylesheet" type="text/css" media="all" href="../static/cssstyle.css">
+<script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../static/js/jquery.autocomplete.min.js"></script>
+<script type="text/javascript" src="../static/js/cmp-autocomplete.js"></script>
+    
+</head>
+<body>
+<div id="topbar"><a href="/"><img src="../static/images/logo-1.png" width="10%" height="10%"></a></div>
+<div id="w">
+<div id="content">
+<h1>Find Similar Canadian Businesses</h1>
+<p align="center">Our SimilarBusiness Tool helps you find similar Canadian companies based on shared industry and product offering.</p>
+<div id="searchfield">
+<form><input type="text" placeholder='Type here to search for a company' name="searchcompanies" class="biginput" id="autocomplete"></form>
+</div>
+
+<div align="center">
+<button onclick="myFunction()">Click to see random selection</button>
+<p id="demo"></p>      </div>
+    
+</div>
+    
+<div id="w">
+<div id="content">
+<h1>How Can SimilarBusiness Help Me?
+</h1>
+<div class="row">
+  <div class="column" style="" align="center">
+    <div><img src="../static/images/leads.svg"></div>
+    <h3>Generating Leads</h3>
+    <p>SimilarBusiness is the perfect tool for finding new business prospects. It provides valuable company information and contact details.</p>
+  </div>
+  <div class="column" style="" align="center">
+    <div><img src="../static/images/competitors.svg"></div>
+    <h3>Discovering Competitors</h3>
+    <p>SimilarBusiness offers free and quick access to discovering your competitors.</p>
+  </div>
+</div>
+</div>
+</div>
+    
+<hr>
+<footer class="footer">
+    <div align="center">
+        <p font-size="8px" font-family="Avenir" >Created by <a href="https://www.linkedin.com/in/eniolaalese/" target="_blank">Eniola Alese </a></p>
+        <hr>
+      </div>
+    </footer>
+</div>
+</body>
+<script>
+    var allCompanies = {{ allCompanies | safe }};
+</script>
+    
+<script>
+function myFunction() {
+    var x = Math.floor((Math.random() * 46870) + 1);
+    document.getElementById("demo");
+    document.location = 'findsimilar/'+x;
+}
+</script>
+
+</html>

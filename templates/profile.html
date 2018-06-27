@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Find Similar Canadian Businesses</title>
+<link rel="shortcut icon" href="../static/images/logo-1.ico">
+<link rel="icon" href="../static/images/logo-1.ico">
+<link rel="stylesheet" type="text/css" media="all" href="../static/cssstyle.css">
+<script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script>
+    
+
+    
+</head>
+    
+<body>
+<div id="topbar"><a href="/"><img src="../static/images/logo-1.png" width="10%" height="10%"></a></div>
+        
+<div id="w">
+<div id="content">
+<h1>{{ selectcompanyDF.comp_op_name }}</h1>
+    <h2> Company Description </h2>
+    <p><strong>Industry:</strong> {{ selectcompanyDF.prim_NAICS_sec }}</p>
+    <p><strong>Primary Business Activity:</strong> {{ selectcompanyDF.prim_bus_activity }}</p>
+    <p><strong>Profile:</strong> {{ selectcompanyDF.comp_prof }}</p>
+    
+    <h2> Company Contact </h2>
+    <p><strong>Telephone:</strong> {{ selectContactDF.telephone }}</p>
+    <p><strong>Website:</strong> <a href="{{ selectContactDF.website }}" target="_blank">{{ selectContactDF.website }}</a></p>
+    <p><strong>Address:</strong> {{ selectContactDF.address }}</p>
+    
+    <h2>Contact Person</h2>
+    {% for Eidx,Erow in selectPersonDF[:1].iterrows() %}
+    <p><strong>Contact Name:</strong> {{ Erow.cont_name }}</p>
+    <p><strong>Title:</strong> {{ Erow.title }}</p> 
+    <p><strong>Responsibility:</strong> {{ Erow.responsibility }}</p> 
+    <p><strong>Telephone:</strong> {{ Erow.tel }}</p>
+    <p><strong>Email:</strong> <a href="mailto:{{ Erow.email }}" target="_blank">{{ Erow.email }}</a></p>
+    {% endfor%}
+    <div align="center">
+    <button onclick="myFunction()" >See companies similar to {{ selectcompanyDF.comp_op_name }} </button><p id="demo"></p></div>
+
+    </div>
+    
+<hr>
+<footer class="footer">
+    <div align="center">
+        <p font-size="8px" font-family="Avenir" >Created by <a href="https://www.linkedin.com/in/eniolaalese/" target="_blank">Eniola Alese </a></p>
+        <hr>
+      </div>
+    </footer>
+</div>
+        
+</body>
+    
+<script>
+function myFunction() {
+    document.getElementById("demo");
+    document.location = '/findsimilar/'+{{selectID}};
+}
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Find Similar Canadian Businesses</title>
+<link rel="shortcut icon" href="../static/images/logo-1.ico">
+<link rel="icon" href="../static/images/logo-1.ico">
+<link rel="stylesheet" type="text/css" media="all" href="../static/cssstyle.css">
+<script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script>
+    
+</head>
+    
+<body>
+<div id="topbar"><a href="/"><img src="../static/images/logo-1.png" width="10%" height="10%"></a></div>
+    
+<div id="w">
+<div id="content">
+<h1> Similar companies to <a href= "/profile/{{selectID}}">{{ selectcompanyDF.comp_op_name }} </a></h1>
+<p>{{ selectcompanyDF.comp_prof }}</p>
+</div>
+    
+<div id="w">
+<div id="content">
+{% for Eidx,Erow in similarDF.iterrows() %}
+<h1><a href= "/profile/{{Eidx}}">{{ Erow.comp_op_name }}</a></h1>
+<p>{{ Erow.comp_prof }}</p>
+{% endfor%}
+</div>
+<hr>
+<footer class="footer">
+    <div align="center">
+        <p font-size="8px" font-family="Avenir" >Created by <a href="https://www.linkedin.com/in/eniolaalese/" target="_blank">Eniola Alese </a></p>
+        <hr>
+      </div>
+    </footer>
+</div>
+    
+        
+</body>
+
+
+</html>
