@@ -34,7 +34,7 @@ def findsimilar(companyID):
     Display result of get_similar_Companies function 
     
     """
-    similarDF = get_similar_Companies(companyID, 5)
+    similarDF = get_similar_Companies(companyID, 10)
     return render_template('similar.html',
                            similarDF=similarDF,
                            selectcompanyDF=compDF.iloc[companyID],
