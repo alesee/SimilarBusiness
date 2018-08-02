@@ -7,5 +7,4 @@ Install the requirements using `pip install -r requirements.txt`
 
 Demo
 ---
-<a href="https://vimeo.com/277233466" target="_blank"><img src="imgs/demo.png" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+<a href="https://vimeo.com/277233466" target="_blank"><img src="imgs/demo.png" /></a>
