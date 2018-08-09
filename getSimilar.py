@@ -3,7 +3,7 @@ import dill as pickle
 import gensim
 
 model_path = 'models/' 
-model_pickle_path = model_path+'pv_dbow_final.bz2' 
+model_pickle_path = model_path+'pv_dbow_final' 
 datapath = 'data/'
 company_data_path = datapath+'comp-df.pk'
 contact_data_path = datapath+'contact-df.pk'
